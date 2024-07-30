@@ -1,0 +1,56 @@
+it is a js libary j-query (old libary)
+
+why to lean react ? 
+- hype , job , trend , buid UI 
+- it make easy to manage & build complex frontend 
+
+when should I learn React ?
+-After mastering js (execution contex , thread execution , function execution , dom manuplation)
+-must project don't need ract in initial phase 
+
+Why react was created ? 
+- facebook have a problem (Ghost message problem) , no consistency in UI 
+
+state(variable) -> js  &  UI -> DOM (varible and DOM not able to talk together smoothely )
+
+khan acedemy (first adopeded react)
+unplashed 
+
+Don't learn React if :- 
+- you don't know how JS work or Dom works 
+
+React learning process :- 
+- go in-depth method                     - by making projects(ont topic od a time )
+       |                                                |
+ Babel , fibre , virtual DOM                    Todo , Git Api , calculator 
+ diff algo , hydration       
+
+React is a libary ? 
+ - Framework(military - follow the rules) vs Libary (cool dude - can be used )
+ - React is libary  
+
+Topic to learn :- 
+- core of React (State or UI manupulation , JSX (html in js ))
+- component Reusability 
+- Resuing of component (properties pass in components)
+-how to propagate change (hooks) (usestate)
+
+spa - single page application (page is not reload )
+
+Additional add on to react 
+- router (react don't have routers )  (React router dom libary)
+- state management (react don't have state management)
+    (Redux, redux toolkit, zustand, constext API )
+-class based component
+    - legacy code (old code base)    
+-BAAS(backend as as service ) APPs    
+    appewrite , firebase , superbase
+    - socual media clone , ecommerence app..
+
+After React 
+- React is not a complete solution in most case
+    - no SEO(by defualt no), browser rendring of JS, no routing 
+-Framework 
+    Nextjs ( Framework- in both backend and frontend can write ),gatsby, remix 
+
+

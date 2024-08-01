@@ -1,8 +1,13 @@
 
+import Fun from "./akash"
 function App() {
   
   return (
-    <h1>HELLO REACT with vite </h1>
+    <>
+    <Fun/>
+    <h1>we have to retun only one element so we can wrap in a div or `<> </>` it is called as fragment </h1>
+    <p>fragment </p>
+    </>
   )
 }
 

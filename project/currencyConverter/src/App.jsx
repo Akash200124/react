@@ -6,10 +6,10 @@ import { useState } from 'react';
 
 function App() {
 
-    const [amount ,setAmount] = useState(0)
-    const [from,setFrom] = useState('usd')
-    const[to,setTo] = useState("inr");
-    const[convertedAmount,setConvertedAmout] = useState(0);
+    const [amount ,setAmount] = useState("")
+    const [from,setFrom] = useState('usd');
+    const[to,setTo] = useState('inr');
+    const[convertedAmount,setConvertedAmout] = useState("");
 
 
     const curencyInfo = useCurrentInfo(from);
@@ -65,7 +65,8 @@ function App() {
                     Swap
                 </button>
             </div>
-            <div className='w-full mt-1 mb-4'>
+            
+            <div className='w-full mt-1  mb-4'>
                 <InputBox
                 label="To"
                 amount={convertedAmount}
@@ -73,8 +74,9 @@ function App() {
                 selectCurrency={to}    
                 onCurrencyChange={(currency)=> setTo(currency)}
                 amountDisble
-               
+                
                 />
+                
             </div>
             <button type='submit'
             className='w-full bg-blue-600 text-white p-4 py-3 rounded-lg' 

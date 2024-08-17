@@ -1,0 +1,17 @@
+1.what is context API  (only exist in react) similar Redux is also use to management of the states 
+
+const SomeContext = createContext(defaultValue)
+
+Redux library in react -> react-Redux or other place Redux-toolkit (RTK) 
+
+zustand - it is also a state management library 
+
+it is use to share the value in components like language , username and password dark mode  (it is like prop ) 
+
+2. To send the prop to the component inside the component like <Dashboard name= " ">  <name= " " card> <Dashboard/> we have to write the name in all the component and this is call the prop drilling that is not optimized way 
+
+to deal with this problem we use the context API where we make a glable component that is directory call in any component
+
+
+
+ 

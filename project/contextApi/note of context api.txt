@@ -14,4 +14,52 @@ to deal with this problem we use the context API where we make a glable componen
 
 
 
+
+
+to reload the project 
+
+>re
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  

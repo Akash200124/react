@@ -7,6 +7,10 @@ import Header from "./header/Header";
 import Button from './Button';
 import Input from './Input';
 import RTE from "./RTE";
+import Login from "./Login"
+import Signup from "./Signup"
+import post from "./PostCard"
+import postForm from "./post-form/PostForm"
 
 export {
     Header,
@@ -16,5 +20,9 @@ export {
     Container,
     Input,
     Button,
-    RTE
+    RTE,
+    Login,
+    Signup,
+    post,
+    postForm
 }

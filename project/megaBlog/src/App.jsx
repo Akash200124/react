@@ -3,9 +3,10 @@ import './App.css'
 import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import { login, logout } from './store/authSlice';
-import Header from './components/header/Header'
-import Footer from './components/footer/Footer'
-import {Outlet} from 'react-router-dom'
+import Header from './components/header/Header';
+// import { Footer } from './components/footer/Footer'
+import Footer from '/src/components/footer/Footer.jsx';
+import { Outlet } from 'react-router-dom';
 
 
 
@@ -31,15 +32,15 @@ function App() {
   return !loading ? (
     <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
       <div className="w-full block">
-        <Header/>
+        <Header />
         <main>
-        <Outlet>
-          
-        </Outlet>
+          <Outlet>
+
+          </Outlet>
         </main>
-        <Footer/>
+        <Footer />
       </div>
-       </div>
+    </div>
   ) : (null)
 
 }

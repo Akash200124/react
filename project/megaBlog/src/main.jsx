@@ -14,6 +14,7 @@ import EditPost from './pages/EditPost.jsx'
 import Post from './pages/Post.jsx'
 import Login from './pages/Login.jsx'
 import Signup from './pages/Signup.jsx'
+import Image from './components/Image.jsx'
 
 
 
@@ -30,17 +31,16 @@ const router = createBrowserRouter([
     {
       path: "/login",
       element: (
-        <AuthLayout authentication={false}>
           <Login />
-        </AuthLayout>
+        // <AuthLayout authentication={false}>
+        // </AuthLayout>
       )
     },
     {
       path: "/signup",
       element: (
-        <AuthLayout authentication={false}>
+
           <Signup />
-        </AuthLayout>
       )
     },
     {
@@ -57,6 +57,7 @@ const router = createBrowserRouter([
         <AuthLayout authentication = {true}>
           <AddPost/>
         </AuthLayout>
+        // <Image/>
       )
     },
     {

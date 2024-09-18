@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { login as authLogin } from '../store/authSlice';
 import { Button, Container, Input, Logo } from './index';
 import { useDispatch } from "react-redux";
-import { AuthService } from "../appwrite/auth";
+// import { AuthService } from "../appwrite/auth";
 import { useForm } from 'react-hook-form'
+import authService from '../appwrite/auth'
 
 
 function Login() {
@@ -16,18 +17,20 @@ function Login() {
 
     const login = async (data) => {
         try {
-            const session = await AuthService.login(data)
+            // console.log(data)
+            const session = await authService.login(data);
 
             if (session) {
-                const userData = await AuthService.getCurrentUser()
+                const userData = await authService.getCurrentUser()
                 if (userData) {
+                    console.log(authLogin(userData),'userdata')
                     dispatch(authLogin(userData));
                     // by use of navigate the user can go on next page without click programtically 
                     navigate("/")
                 }
             }
         } catch (error) {
-            setError(error.message);
+            setError(error.message   );
         }
     }
 
@@ -80,10 +83,12 @@ function Login() {
                         })}
                     >
                     </Input>
-                    <Button
+
+                    <button type="submit" className="w-full bg-blue-400 rounded-md py-2">Sign in </button>
+                    {/* <Button
                         type="submit"
                         className="w-full"
-                    >Sign in </Button>
+                    ></Button> */}
                 </div>
             </form>
         </div>

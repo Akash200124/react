@@ -1,8 +1,9 @@
-import React from "react";
+import React, { act } from "react";
 import { Container, LogoutBtn, Logo } from "../index";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { createActionCreatorInvariantMiddleware } from "@reduxjs/toolkit";
 
 function Header() {
 
@@ -32,6 +33,11 @@ function Header() {
             name: 'Add Posts',
             slug: "/add-post",
             active: authStatus
+        },
+        {
+            name:'Login',
+            slug:"/login",
+            active:!authStatus
         }
     ]
     return (
@@ -64,6 +70,12 @@ function Header() {
                                 <LogoutBtn />
                             </li>
                         )}
+
+                        {/* {!authStatus && (
+                            <li>
+                                
+                            </li>
+                        )} */}
                     </ul>
                 </nav>
             </Container>

@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import appwriteService from "../appwrite/config"
 import { Button, Container } from "../components";
+import parse from 'html-react-parser'
 
 function Post() {
 
@@ -69,7 +70,7 @@ function Post() {
                         {post.title}
                     </h1>
                 </div>
-                <div className="browser-css">{parseFloat(post.content)}</div>
+                <div className="browser-css">{parse(post.content)}</div>
             </Container>
         </div>
     ) : null;

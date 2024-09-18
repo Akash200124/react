@@ -6,15 +6,21 @@ import PostCard from '../components/PostCard';
 function AllPost() {
 
     const [post, setPost] = useState([]);
+
+
+    console.log(post,"post")
+
     useEffect(() => {
 
+        appwriteService.getPosts([]).then((posts) => {
+            if (posts) {
+                setPost(posts.documents)
+                
+            }
+        })
     }, [])
 
-    appwriteService.getPosts([]).then((posts) => {
-        if (posts) {
-            setPost(posts.documents)
-        }
-    })
+   
     return (
 
         <div className="w-full py-8">

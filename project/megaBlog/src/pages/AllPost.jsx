@@ -8,13 +8,14 @@ function AllPost() {
     const [post, setPost] = useState([]);
 
 
-    console.log(post,"post")
+    // console.log(post,"post")
 
     useEffect(() => {
 
         appwriteService.getPosts([]).then((posts) => {
             if (posts) {
                 setPost(posts.documents)
+                
                 
             }
         })

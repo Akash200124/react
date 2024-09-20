@@ -24,7 +24,7 @@ function Login() {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
                     console.log(authLogin(userData),'userdata')
-                    dispatch(authLogin(userData));
+                    dispatch(authLogin(userData.payload));
                     // by use of navigate the user can go on next page without click programtically 
                     navigate("/")
                 }

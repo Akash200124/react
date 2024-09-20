@@ -6,21 +6,23 @@ import { Link } from 'react-router-dom'
 //     // Use optional chaining or default values to prevent errors
 //     const { $id = '', title = 'Untitled', featureimage = '' } = post || {};
 
-function PostCard({ $id, title, featureimage } ) {
-    console.log("featureimage",featureimage)
-    console.log("title",title)
+function PostCard({ $id, title , featureImage } ) {
 
-    const [imageUrl, setImageUrl] = useState('');
+    console.log("featureimage",featureImage)
+    console.log("title",title
+)
+
+    const [imageUrl, setImageUrl] = useState(null);
 
     useEffect(() => {
         // Fetch the image preview only once when `featureimage` changes
-        if (featureimage) {
+        if (featureImage) {
             // console.log(appwriteSerive.getFilePreview(featureimage))
-           const url =   appwriteSerive.getFilePreview(featureimage)
+           const url =   appwriteSerive.getFilePreview(featureImage)
             setImageUrl(url);  // Set the preview URL in state
                
         }
-    }, [featureimage]);
+    }, [featureImage]);
 
     return (
         <Link to={`/post/${$id}`}>

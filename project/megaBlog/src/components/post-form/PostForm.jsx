@@ -24,7 +24,7 @@ function PostForm({ post }) {
     // const userData = useSelector(state => state.userData)
     const userData = useSelector(state => state.auth.userData);
 
-    console.log(userData.$id, 'userdata')
+    console.log(userData?.payload?.userData?.$id, 'userdata')
 
     //    console.log('post object:', post); 
 
@@ -98,11 +98,12 @@ function PostForm({ post }) {
             if (file) {
                 // Add the uploaded file ID to the post data
                 data.featureImage = file.$id;
+                data.userId = userData?.payload?.userData?.$id
 
                 // Create the new post with the uploaded file and user ID
                 const dbpost = await service.createPost({
-                    ...data,
-                    userId: userData.$id
+                    ...data
+                    // userId: userData.$id
                 });
 
                 // If the post is created, navigate to the new post page

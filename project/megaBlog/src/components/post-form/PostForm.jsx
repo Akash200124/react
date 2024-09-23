@@ -102,8 +102,8 @@ function PostForm({ post }) {
 
                 // Create the new post with the uploaded file and user ID
                 const dbpost = await service.createPost({
-                    ...data
-                    // userId: userData.$id
+                    ...data,
+                    // userId: userData?.payload?.userData?.$id
                 });
 
                 // If the post is created, navigate to the new post page
@@ -172,6 +172,10 @@ function PostForm({ post }) {
                     control={control}
                     name="content"
                     defaultValue={post?.content || ""}
+                    rules={{
+                        required: true,
+                        maxLength: 255
+                    }}
                     render={({ field }) => (
                         <textarea
                             style={{ height: '500px', width: '100%' }}

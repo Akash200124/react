@@ -12,15 +12,20 @@ function AllPost() {
 
     useEffect(() => {
 
-        appwriteService.getPosts([]).then((posts) => {
-            if (posts) {
-                setPost(posts.documents)
-                
-                
+        appwriteService.getPosts([]).then((res) => {
+            if (res) {
+                               
+                const document = res.documents;
+                setPost(document);
             }
         })
     }, [])
 
+   
+
+   console.log(post, "res");
+   
+    
    
     return (
 
@@ -30,9 +35,11 @@ function AllPost() {
                 <div className="flex flex-wrap ">
                     {
                         post.map((item) => (
-                            <div key={item.$id} className='p-2 w-1/4'>
+                            item ?(<div key={item.$id} className='p-2 w-1/4'>
+                        
+                                
                                 <PostCard post={item} />
-                            </div>
+                            </div>) : null
                         ))
                     }
                 </div>

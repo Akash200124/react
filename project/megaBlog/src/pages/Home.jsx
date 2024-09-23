@@ -11,7 +11,8 @@ function Home() {
 
         appwriteService.getPosts().then((posts) => {
             if (posts) {
-                setPosts(posts.documents)
+                const data = posts?.documents
+                setPosts(data)
             }
 
         })
@@ -40,8 +41,10 @@ function Home() {
                 <div className="flex flex-wrap">
                     {
                         posts.map((post) => (
+                            // console.log(post, "posts 1"),
+                            
                             <div className="p-2 w-1/4" key={post.$id}>
-                                <PostCard {...post} />
+                                <PostCard post={post} />
                             </div>
                         ))
                     }

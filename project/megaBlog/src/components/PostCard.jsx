@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom'
 //     // Use optional chaining or default values to prevent errors
 //     const { $id = '', title = 'Untitled', featureimage = '' } = post || {};
 
-function PostCard({ $id, title , featureImage } ) {
+function PostCard({ post } = {}) {
 
+    const  { $id, title , featureImage } = post ;
+    console.log("postid",$id);
+    
     console.log("featureimage",featureImage)
-    console.log("title",title
-)
+    console.log("title",title)
 
     const [imageUrl, setImageUrl] = useState(null);
 

@@ -12,8 +12,11 @@ function Post() {
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
 
-    const isAuthor = post && userData ? post.userId === userData.$id : false;
+    // console.log(userData?.payload?.userData?.$id, "userdataid");
+    
+    const isAuthor = post && userData ? post.userId === userData?.payload?.userData?.$id : false;
 
+    console.log(isAuthor, "isAuthor");
     useEffect(() => {
         if (slug) {
             appwriteService.getPost(slug).then((res) => {
@@ -63,13 +66,11 @@ function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
-                                    Edit
-                                </Button>
+                            <button type="button" className=" bg-green-500 mr-3 p-2 rounded-md" >Edit</button>
+                             
                             </Link>
-                            <Button bgColor="bg-red-500" onClick={deletePost}>
-                                Delete
-                            </Button>
+                            <button type="button" className="bg-red-500  mr-3 p-2 rounded-md" onClick={deletePost}>Delete</button>
+                            
                         </div>
                     )}
                 </div>

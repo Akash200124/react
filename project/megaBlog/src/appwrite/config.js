@@ -7,6 +7,7 @@ export class Service {
     client = new Client();
     databases;
     bucket;
+    
 
     constructor() {
         this.client
@@ -99,6 +100,13 @@ export class Service {
 
     async getPosts(queries = [Query.equal("status","active")]){
         try {
+            // const userData = useSelector(state => state.auth.userData);
+
+            // console.log(userData?.payload?.userData?.$id, 'userdata')
+
+            // const userQuery = Query.equal("userId", userData?.payload?.userData?.$id);
+
+            // const combinedQueries = [...queries, userQuery];
             return await this.databases.listDocuments(
                 conf.appWriteDatabaseId,
                 conf.appWriteCollectionId,

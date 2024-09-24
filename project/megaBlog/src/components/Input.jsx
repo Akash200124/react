@@ -11,7 +11,7 @@ const Input = React.forwardRef(function Input({
     return (
         <div className="w-full">
             {label && <label
-                className="inline-block mb-1 pl-1"
+                className=" mb-1 pl-1 flex "
                 htmlFor={id} >
                 {label}
             </label>

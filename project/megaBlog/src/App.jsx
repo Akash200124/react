@@ -30,8 +30,9 @@ function App() {
   }, [])
 
   return !loading ? (
-    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
-      <div className="w-full block">
+    <div className='min-h-screen w-full flex flex-wrap content-between bg-gray-400'>
+      <div className="w-full">
+      <div >
         <Header />
         <main>
           <Outlet>
@@ -39,6 +40,7 @@ function App() {
           </Outlet>
         </main>
         <Footer />
+      </div>
       </div>
     </div>
   ) : (null)

@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 
 
 
-function PostForm({ post }) {
+function  PostForm({ post }) {
 
 
     const { register, handleSubmit, watch, setValue, control, getValues, textarea } = useForm({
@@ -26,44 +26,7 @@ function PostForm({ post }) {
 
     console.log(userData?.payload?.userData?.$id, 'userdata')
 
-    //    console.log('post object:', post); 
-
-
-
-    // const submit = async (data) => {
-    //     console.log("button working ")
-    //     if (post) {
-    //         const file = data.image[0] ? service.fileUpload(data.image[0]) : null;
-
-    //         if (file) {
-    //             service.deletFile(post.featuredImage)
-    //         }
-    //         const dbpost = await service.updatePost(post.$id, {
-    //             ...data,
-    //             featureImage: file ? file.$id : undefined,
-
-    //         })
-    //         if (dbpost) {
-    //             navigate(`/post/${dbpost.$id}`)
-    //         }
-    //     }
-    //     else {
-    //         const file = await service.fileUpload(data.image[0]);
-
-    //         if (file) {
-    //             const fileID = file.$id
-    //             data.featureImage = fileID
-
-    //             const dbpost = await service.createPost({ ...data, userId: userData.$id })
-
-    //             if (dbpost) {
-    //                 navigate(`/post/${dbpost.$id}`)
-    //             }
-    //         }
-
-    //     }
-    // }
-
+   
     const submit = async (data) => {
         console.log("button working");
         console.log(data, "data")
@@ -75,13 +38,13 @@ function PostForm({ post }) {
 
             // If a new file is uploaded, delete the old one
             if (file) {
-                await service.deletFile(post.featuredImage);
+                await service.deletFile(post.featureImage);
             }
 
             // Update the post with new data, including the new image ID if available
             const dbpost = await service.updatePost(post.$id, {
                 ...data,
-                featureImage: file ? file.$id : post.featuredImage,  // Use the new file ID if uploaded, otherwise keep the existing one
+                featureImage: file ? file.$id : post.featureImage,  // Use the new file ID if uploaded, otherwise keep the existing one
             });
 
             // If the post is updated, navigate to the updated post page
@@ -146,6 +109,9 @@ function PostForm({ post }) {
 
     // const filePReviewUrl = service.getFilePreview(post.featuredImage);
     // console.log(filePReviewUrl, "filePReviewUrl")
+    console.log(post, "postdfddfdf")
+   
+
 
     return (
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
@@ -200,7 +166,7 @@ function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={service.getFilePreview(post.featuredImage)}
+                            src={service.getFilePreview(post.featureImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />

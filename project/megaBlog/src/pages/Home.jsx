@@ -18,6 +18,9 @@ function Home() {
         })
     }, [])
 
+    console.log(posts, "posts");
+    
+
 
     if (posts.length === 0) {
         return (
